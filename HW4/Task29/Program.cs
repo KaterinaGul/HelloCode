@@ -3,11 +3,28 @@
 
 int [] array = new int[8];
 
-Console.WriteLine("Введите 8 чисел через 'пробел' для создания массива:");
+void FillArray(int[] collection)
+{
+    int length = collection.Length;
+    Console.WriteLine("Введите 8 чисел через пробел для создания массива:");
             string[] arrayNumber =  Console.ReadLine().Split(' ');
  
-            for (int i =0; i < arrayNumber.Length; i++)
+            for (int index =0; index < arrayNumber.Length; index++)
             {
-                array[i] = int.Parse(arrayNumber[i]);
-                Console.Write(array[i]);
+                array[index] = int.Parse(arrayNumber[index]);
             }
+}
+
+void PrintArray(int[] col)
+{
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.Write(col[position]);
+        position++;
+    }
+}
+
+FillArray(array);
+PrintArray(array);
